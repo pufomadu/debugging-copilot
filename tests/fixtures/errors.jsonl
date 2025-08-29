@@ -1,0 +1,12 @@
+{"id":"E01","error":"KeyError: 'Age'","code":"df['Age'].mean()","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-12"}
+{"id":"E02","error":"AttributeError: 'DataFrame' object has no attribute 'ix'","code":"df.ix[:, 'col']","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-7"}
+{"id":"E03","error":"IndexError: list index out of range","code":"arr[10]","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-9"}
+{"id":"E04","error":"TypeError: unsupported operand type(s) for +: 'int' and 'str'","code":"3 + '3'","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-5"}
+{"id":"E05","error":"ValueError: could not convert string to float: 'NA'","code":"np.array(['1','2','NA']).astype(float)","gold_tier":3,"gold_citation":"data/your_slides.pdf#page-8"}
+{"id":"E06","error":"NameError: name 'train_test_split' is not defined","code":"X_train, X_test = train_test_split(X, test_size=0.2)","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-4"}
+{"id":"E07","error":"FileNotFoundError: [Errno 2] No such file or directory: 'data.csv'","code":"pd.read_csv('data.csv')","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-6"}
+{"id":"E08","error":"SettingWithCopyWarning","code":"df[df.a>0]['b']=0","gold_tier":3,"gold_citation":"data/your_slides.pdf#page-10"}
+{"id":"E09","error":"ZeroDivisionError: division by zero","code":"x/0","gold_tier":1,"gold_citation":"data/your_slides.pdf#page-3"}
+{"id":"E10","error":"AttributeError: 'Series' object has no attribute 'to_numpy'","code":"s = df['a']; s.to_numpy()","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-6"}
+{"id":"E11","error":"ValueError: operands could not be broadcast together with shapes (3,) (4,)","code":"np.array([1,2,3]) + np.array([1,2,3,4])","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-11"}
+{"id":"E12","error":"TypeError: 'NoneType' object is not subscriptable","code":"result = f(); result[0]","gold_tier":2,"gold_citation":"data/your_slides.pdf#page-10"}
