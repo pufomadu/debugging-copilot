@@ -40,8 +40,7 @@ CHROMA_DIR = "./chroma_db"
 DATA_DIR = pathlib.Path("./data")
 EMBED_MODEL = "text-embedding-ada-002"  # This one avoids 403 access issues
 
-# Load PDF Function
-
+# Function to load PDFs
 def load_pdf_documents() -> List[Document]:
     """
     Load all PDFs from the ./data directory.
@@ -58,6 +57,7 @@ def load_pdf_documents() -> List[Document]:
     logger.info(f"✅ Loaded {len(docs)} pages from PDFs.")
     return docs
 
+# Function to split documents into chunks
 def split_documents(documents: List[Document]) -> List[Document]:
     """
     Split large documents into smaller chunks using a sliding window.
@@ -71,12 +71,14 @@ def split_documents(documents: List[Document]) -> List[Document]:
     logger.info(f"✅ Split into {len(chunks)} total chunks.")
     return chunks
 
+# Function to get OpenAI embeddings
 def get_embeddings() -> OpenAIEmbeddings:
     """
     Return OpenAI embeddings using a safe default model.
     """
     return OpenAIEmbeddings(model=EMBED_MODEL)
 
+# Function to add chunks to Chroma vector DB
 def add_to_chroma(chunks: List[Document]) -> int:
     """
     Store each chunk into the Chroma vector database with unique IDs

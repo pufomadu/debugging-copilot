@@ -117,3 +117,7 @@ This project was built for students at The Knowledge House to help them:
 - Expand error parser for richer Python diagnostics
 - Support additional file formats (notebooks, CSVs)
 
+
+### References
+1. https://www.youtube.com/watch?v=2TJxpyO3ei4
+2. https://www.youtube.com/watch?v=BREQbLiRZFI
