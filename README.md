@@ -119,7 +119,3 @@ This project was built for students at The Knowledge House to help them:
 - Expand error parser for richer Python diagnostics
 - Support additional file formats (notebooks, CSVs)
 
-
-## ❤Credits
-- Built for the Debugging Copilot Project by The Knowledge House Fellows.
-- Powered by OpenAI, LangChain, and open-source tools.
