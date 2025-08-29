@@ -48,7 +48,7 @@ It uses **retrieval-augmented generation (RAG)** over course slides and labs to 
 
 ### Setup Instructions
 - Clone the repo
-- git clone https://github.com/your-username/debugging-copilot.git
+- git clone https://github.com/pufomadu/debugging-copilot.git
 - cd debugging-copilot
 
 ### Install dependencies
