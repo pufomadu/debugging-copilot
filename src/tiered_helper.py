@@ -7,6 +7,7 @@ from retriever import retrieve
 from prompts import TIERED_TEMPLATE
 from error_parser import parse_error
 
+
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

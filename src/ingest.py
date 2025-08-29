@@ -19,12 +19,17 @@ from dotenv import load_dotenv
 
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_core.documents import Document
 
 # Load .env variables (e.g., OPENAI_API_KEY)
 load_dotenv()  
+
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("❌ OPENAI_API_KEY not found. Did you create a .env file?")
+
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO)
@@ -37,7 +42,7 @@ EMBED_MODEL = "text-embedding-ada-002"  # This one avoids 403 access issues
 
 # Load PDF Function
 
-def load_pdfs() -> List[Document]:
+def load_pdf_documents() -> List[Document]:
     """
     Load all PDFs from the ./data directory.
     Each page becomes a separate Document object.
@@ -74,7 +79,7 @@ def get_embeddings() -> OpenAIEmbeddings:
 
 def add_to_chroma(chunks: List[Document]) -> int:
     """
-    Store each chunk into the Chroma vector database with a stable ID format:
+    Store each chunk into the Chroma vector database with unique IDs
         format: <source>::<page_or_cell>::chunk-<n>
     """
     logger.info("🧠 Saving chunks to Chroma vector DB...")
@@ -106,7 +111,7 @@ def add_to_chroma(chunks: List[Document]) -> int:
 def main():
     logger.info("Starting ingestion process...")
     try:
-        docs = load_pdfs()
+        docs = load_pdf_documents()
         if not docs:
             logger.warning("No PDFs found in ./data. Please add slide decks.")
             return
